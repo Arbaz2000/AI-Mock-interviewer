@@ -4,10 +4,14 @@ import AddNewInterview from './_components/AddNewInterview';
 import InterviewList from './_components/InterviewList';
 
 interface DashboardProps {
-    children?: React.ReactNode;
+    params?: any
+    searchParams?: any
 }
 
-const Dashboard: React.FC<DashboardProps> = () => {
+export default function DashboardPage({
+    params,
+    searchParams,
+}: DashboardProps) {
     return <div className='p-10'>
         <h2 className='font-bold text-2xl text-primary'>Dashboard</h2>
         <h2 className='text-gray-500'>Create and start your AI Mockup Interview</h2>
@@ -17,6 +21,4 @@ const Dashboard: React.FC<DashboardProps> = () => {
         </div>
         <InterviewList />
     </div>
-};
-
-export default Dashboard;
+}
